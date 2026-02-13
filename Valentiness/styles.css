@@ -1,0 +1,83 @@
+ :root{
+  --bg1:#ff9a9e;--bg2:#fecfef;--card:#fff;--accent:#ff4d6d
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Poppins,system-ui,Segoe UI,Roboto}
+.bg{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg1),var(--bg2));padding:32px}
+.card{width:100%;max-width:720px;background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.9));border-radius:18px;padding:28px 28px 40px;box-shadow:0 10px 30px rgba(0,0,0,0.12);position:relative;overflow:hidden}
+/* soft glow + blur around card */
+.card{z-index:2}
+.card::before{content:'';position:absolute;inset:-18px;border-radius:22px;background:radial-gradient(closest-side, rgba(255,77,109,0.14), transparent 40%);filter:blur(18px);z-index:-1}
+
+.title{margin:0;text-align:center;font-size:28px;color:var(--accent)}
+.script{font-family:'Great Vibes',cursive;font-size:36px}
+.subtitle{text-align:center;color:#5b3b4a;margin:6px 0 18px}
+.controls{display:grid;grid-template-columns:1fr;gap:10px;margin:8px 0 18px}
+.controls input,.controls textarea{padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);font-size:14px}
+.controls textarea{min-height:80px;resize:vertical}
+.controls button{background:var(--accent);color:#fff;border:none;padding:12px;border-radius:10px;font-weight:600;cursor:pointer}
+
+.controls input.deny{animation:shake .35s;border-color:var(--accent);box-shadow:0 0 0 6px rgba(255,77,109,0.08)}
+.message{margin-top:14px;padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff6f8,#fff);border:1px solid rgba(255,77,109,0.12);text-align:center}
+.hidden{opacity:0;transform:translateY(8px);pointer-events:none;transition:all .4s cubic-bezier(.2,.9,.25,1)}
+.message.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.footer{text-align:center;color:#a36a78;margin-top:14px;font-size:13px}
+
+/* floating hearts */
+.hearts{pointer-events:none;position:absolute;inset:0;z-index:0}
+.heart{position:absolute;width:28px;height:28px;background:var(--accent);transform:rotate(-45deg);left:50%;top:50%;opacity:0.95;border-radius:4px}
+.heart:before,.heart:after{content:'';position:absolute;width:28px;height:28px;background:var(--accent);border-radius:50%}
+.heart:before{top:-14px;left:0}
+.heart:after{left:14px;top:0}
+@keyframes floatUp{0%{transform:translateY(0) scale(0.9) rotate(-45deg);opacity:1}100%{transform:translateY(-360px) scale(1.2) rotate(-45deg);opacity:0}}
+
+/* polaroid-style background images (fixed positions) */
+.polaroids{position:absolute;inset:0;z-index:1;pointer-events:none}
+.polaroid{position:absolute;pointer-events:auto;background:#fff;border-radius:6px;padding:10px 10px 18px;box-shadow:0 10px 28px rgba(23,15,23,0.18);transition:transform .22s ease,box-shadow .22s ease;transform-origin:center;--rot:0deg}
+.polaroid img{display:block;width:160px;height:auto;border-radius:4px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)}
+.polaroid::after{content:'';display:block;height:6px}
+.polaroid{transform:rotate(var(--rot))}
+.polaroid:hover{transform:translateY(-10px) scale(1.04) rotate(var(--rot));box-shadow:0 18px 36px rgba(23,15,23,0.24)}
+
+
+
+/* Specials (floating flip-cards) */
+.specials-section{margin-top:18px}
+.specials-title{text-align:center;color:#6a3550;margin:6px 0 12px;font-weight:600}
+.specials{display:grid;grid-template-columns:repeat(3,120px);justify-content:center;gap:14px}
+.special{width:120px;height:120px;border-radius:12px;background:linear-gradient(180deg,#fff,#ffeef2);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(163,106,120,0.16);position:relative;cursor:pointer;transform-origin:center;transition:transform .36s ease;perspective:900px}
+.special .front,.special .back{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:12px;backface-visibility:hidden;padding:10px;box-sizing:border-box;transition:transform .48s ease}
+.special .front svg{width:48px;height:48px}
+.special .front{transform:rotateY(0)}
+.special .back{transform:rotateY(180deg);font-size:14px;color:#6a3550;text-align:center;padding:14px}
+.special.open{transform:translateY(-8px) rotateZ(-3deg)}
+.special.open .front{transform:rotateY(180deg)}
+.special.open .back{transform:rotateY(0)}
+
+/* subtle float animation for each special */
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+.special{animation:floaty 4s ease-in-out infinite}
+
+
+@keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-4px)}100%{transform:translateX(0)}}
+
+/* Our Journey timeline styling */
+.memory-section{margin-top:24px;position:relative}
+.timeline-title{text-align:center;color:#6a3550;margin:0 0 18px;font-weight:600;font-size:16px}
+.timeline-container{display:flex;flex-direction:column;gap:32px;align-items:center;padding:0 16px;margin-top:18px}
+.timeline-row-top{display:flex;gap:40px;justify-content:center;width:100%;flex-wrap:wrap}
+.timeline-item-top{display:flex;flex-direction:column;align-items:center;position:relative}
+.timeline-item-bottom{display:flex;flex-direction:column;align-items:center;position:relative}
+
+/* Heart above centered video */
+.heart-top{position:absolute;width:24px;height:24px;background:var(--accent);transform:rotate(-45deg) translateX(-50%);opacity:0.8;border-radius:4px;top:-50px;left:50%}
+.heart-top::before,.heart-top::after{content:'';position:absolute;width:24px;height:24px;background:var(--accent);border-radius:50%}
+.heart-top::before{top:-12px;left:0}
+.heart-top::after{left:12px;top:0}
+.timeline-video{width:180px;height:auto;border-radius:10px;box-shadow:0 10px 24px rgba(23,15,23,0.2);border:4px solid #fff;background:#000}
+.timeline-date{font-size:13px;color:#a36a78;font-weight:500;margin-top:8px;text-align:center}
+.timeline-label{font-size:12px;color:#6a3550;margin-top:4px;text-align:center;font-style:italic}
+
+
+/* responsive */
+@media (min-width:640px){.controls{grid-template-columns:1fr 1fr}.controls textarea{grid-column:span 2}}

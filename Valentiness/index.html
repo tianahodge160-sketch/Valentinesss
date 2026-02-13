@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Valentine's Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg">
+    <div class="hearts" id="hearts"></div>
+    <main class="card">
+      <h1 class="title"><span class="script">Happy Valentine's Day Daddy</span></h1>
+      <p class="subtitle">A little page just for you ❤️</p>
+
+      <div class="controls">
+        <input id="toName" placeholder="Type your name" maxlength="30" autocomplete="off">
+        <button id="revealBtn">Reveal My Message</button>
+      </div>
+
+      <div id="messageCard" class="message hidden">
+        <h2 id="messageTitle">To My Love</h2>
+        <p id="messageText">Hey baby, I know what I did is a bit cringe trust me, I wasn't planning on that. I made this page for you so you can know how much I love you and Im grateful for everything you have done for me, for staying with me through thick and thin and all the tantrums I want to put down. We have been through alot together and Im willing to go through a whole lot more, doing whatever it takes to keep us together. i don't have alot to say but just know that you mean the world to me, I Love You Forever and Always❤️</p>
+      </div>
+
+      <section class="specials-section">
+        <h3 class="specials-title">Why You're Special to Me</h3>
+        <div class="specials" id="specials">
+           <div class="special" data-message="Your smile lights up my day."><div class="front"><svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" fill="#fff" stroke="#ff4d6d" stroke-width="1.4"></rect><path d="M2 6l10 7 10-7" fill="none" stroke="#ff4d6d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17s-3.5-2.6-3.5-5a1.75 1.75 0 013.5-1.25A1.75 1.75 0 0115.5 12c0 2.4-3.5 5-3.5 5z" fill="#ff4d6d"></path></svg></div><div class="back">Your smile lights up my day.</div></div>
+           <div class="special" data-message="You support me no matter what."><div class="front"><svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" fill="#fff" stroke="#ff4d6d" stroke-width="1.4"></rect><path d="M2 6l10 7 10-7" fill="none" stroke="#ff4d6d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17s-3.5-2.6-3.5-5a1.75 1.75 0 013.5-1.25A1.75 1.75 0 0115.5 12c0 2.4-3.5 5-3.5 5z" fill="#ff4d6d"></path></svg></div><div class="back">You support me no matter what.</div></div>
+           <div class="special" data-message="Your huggy and kissy makes everything better."><div class="front"><svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" fill="#fff" stroke="#ff4d6d" stroke-width="1.4"></rect><path d="M2 6l10 7 10-7" fill="none" stroke="#ff4d6d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17s-3.5-2.6-3.5-5a1.75 1.75 0 013.5-1.25A1.75 1.75 0 0115.5 12c0 2.4-3.5 5-3.5 5z" fill="#ff4d6d"></path></svg></div><div class="back">Your huggy and kissy makes everything better.</div></div>
+           <div class="special" data-message="You believe in me, especially when I don't believe in myself."><div class="front"><svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" fill="#fff" stroke="#ff4d6d" stroke-width="1.4"></rect><path d="M2 6l10 7 10-7" fill="none" stroke="#ff4d6d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17s-3.5-2.6-3.5-5a1.75 1.75 0 013.5-1.25A1.75 1.75 0 0115.5 12c0 2.4-3.5 5-3.5 5z" fill="#ff4d6d"></path></svg></div><div class="back">You believe in me, especially when I don't believe in myself.</div></div>
+           <div class="special" data-message="Your laugh makes me laugh."><div class="front"><svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" fill="#fff" stroke="#ff4d6d" stroke-width="1.4"></rect><path d="M2 6l10 7 10-7" fill="none" stroke="#ff4d6d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17s-3.5-2.6-3.5-5a1.75 1.75 0 013.5-1.25A1.75 1.75 0 0115.5 12c0 2.4-3.5 5-3.5 5z" fill="#ff4d6d"></path></svg></div><div class="back">Your laugh makes me laugh.</div></div>
+           <div class="special" data-message="I love growing with you every day."><div class="front"><svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" fill="#fff" stroke="#ff4d6d" stroke-width="1.4"></rect><path d="M2 6l10 7 10-7" fill="none" stroke="#ff4d6d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17s-3.5-2.6-3.5-5a1.75 1.75 0 013.5-1.25A1.75 1.75 0 0115.5 12c0 2.4-3.5 5-3.5 5z" fill="#ff4d6d"></path></svg></div><div class="back">I love growing with you every day.</div></div>
+        </div>
+      </section>
+
+      <section class="memory-section">
+        <h3 class="timeline-title">Our Journey ❤️</h3>
+        <div class="timeline-container">
+          <!-- Top row: Videos 1 & 2 -->
+          <div class="timeline-row-top">
+            <div class="timeline-item-top">
+              <video controls playsinline preload="metadata" class="timeline-video">
+                <source src="videos/7A5225ffbb30465691d1a4bf814c3807.mp4" type="video/mp4">
+              </video>
+              <div class="timeline-date">November 28, 2024</div>
+              <div class="timeline-label">(90's Night)</div>
+            </div>
+
+            <div class="timeline-item-top">
+              <video controls playsinline preload="metadata" class="timeline-video">
+                <source src="videos/Img 5774.mp4" type="video/mp4">
+              </video>
+              <div class="timeline-date">January 24, 2025</div>
+              <div class="timeline-label">(Meeting after School)</div>
+            </div>
+          </div>
+
+          <!-- Bottom: Video 3 centered -->
+          <div class="timeline-item-bottom">
+            <div class="heart-top"></div>
+            <video controls playsinline preload="metadata" class="timeline-video">
+              <source src="videos/Img 7974.mp4" type="video/mp4">
+            </video>
+            <div class="timeline-date">October 19, 2025</div>
+            <div class="timeline-label">(The day before My 17th Birthday)</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">Made with Love ♥</footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
